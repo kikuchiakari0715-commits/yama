@@ -1,0 +1,358 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  color: #4a5568;
+  background-color: #fcfbfa;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(252, 251, 250, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 405; /* ここで文字の細さを調整できます（300 や 250 がおすすめ） */
+  font-size: 1.5rem; /* 大きさもお好みで調整してください */
+  color: #5a6b7c;   /* 色の調整（必要に応じて） */
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.nav a {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #5a6b7c;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #8bbabb;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.fv {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.fv_img {
+  width: 100%;
+
+  margin-top: 40px;
+  object-fit: cover;
+}
+
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section_title {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #3b5266;
+  letter-spacing: 0.2em;
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.section_title::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #a8d5e2;
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.item {
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(139, 186, 187, 0.18);
+}
+
+.item img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.item:hover img {
+  transform: scale(1.04);
+}
+
+.about_wrap {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 3.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.about_image {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.about_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about_text {
+  flex: 1.2;
+}
+
+.artist_name {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.about_text p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: #556070;
+  line-height: 1.9;
+}
+
+.contact_wrap {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf8fa 100%);
+  padding: 3.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.contact_text {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact_text p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.email_link {
+  color: #3b7a8c;
+  font-weight: 500;
+  border-bottom: 1px dashed #3b7a8c;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form_row {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.form_group label {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.required {
+  color: #e53e3e;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background-color: #ffffff;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.95rem;
+  color: #334155;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #8bbabb;
+  box-shadow: 0 0 0 3px rgba(139, 186, 187, 0.2);
+}
+
+.submit_btn {
+  align-self: center;
+  margin-top: 1rem;
+  padding: 0.9rem 3rem;
+  background-color: #5c8d8f;
+  color: #ffffff;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(92, 141, 143, 0.3);
+}
+
+.submit_btn:hover {
+  background-color: #4a7577;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(92, 141, 143, 0.4);
+}
+
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  border-top: 1px solid #f1f5f9;
+}
+
+@media (max-width: 868px) {
+  .header {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .nav {
+    gap: 1.2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .about_wrap {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .form_row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact_wrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .lemon {
+    width: 100px;
+    bottom: -20px;
+    right: 5%;
+  }
+}
+
+@media (max-width: 540px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .fv_img {
+    height: 60vh;
+  }
+}
